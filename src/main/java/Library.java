@@ -23,6 +23,7 @@ public class Library {
 
     private boolean isRemoveBook(int nameBook) {
         return true;
+
     }
 
     public Book getBook(){
