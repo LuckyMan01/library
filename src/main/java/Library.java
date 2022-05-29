@@ -15,6 +15,7 @@ public class Library {
 
     private boolean isAddBook(Book books) {
         return true;
+
     }
 
     private boolean isRemoveBook(Book nameBook) {
