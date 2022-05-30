@@ -1,35 +1,39 @@
-import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.UUID;
 
 public class Library {
     private int size;
-    private final String libraryName;
-    private LinkedList<Book> bookList = new LinkedList<>();
+    private HashSet<Book> bookList = new HashSet<>();
 
-    public Library(String libraryName) {
-        this.libraryName = libraryName;
+    protected void AddBook(Book book) {
+        bookList.add(book);
+    }
+
+    protected void RemoveBook(Book nameBook) {
+        for (Book i : bookList) {
+            if (i.getName().equals(nameBook.getName())) {
+                bookList.remove(i);
+            } else {
+                System.out.println("book not found");
+            }
+        }
+    }
+
+    protected void RemoveBook(UUID idBook) {
+        for (Book i : bookList) {
+            if (i.getId() == idBook) {
+                bookList.remove(i);
+            } else {
+                System.out.println("book not found");
+            }
+        }
+    }
+
+    public Book getBook() {
+        return new Book();
     }
 
     public int size() {
         return this.size;
     }
-
-    private boolean isAddBook(Book books) {
-        return true;
-
-    }
-
-    private boolean isRemoveBook(Book nameBook) {
-        return true;
-    }
-
-    private boolean isRemoveBook(int nameBook) {
-        return true;
-
-    }
-
-    public Book getBook(){
-        return new Book();
-    }
-
-
 }
