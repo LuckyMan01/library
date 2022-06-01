@@ -1,3 +1,5 @@
+import model.Book;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,12 +12,9 @@ public class StatementBook {
 
 
     private String buildStringValues(Book book) {
-        return "'" +  book.getName() + "', " +
-                "'" +   book.getAuthor() + "', " +
-               +  book.getYears() + ", " +
-                "'" +  book.getGenre() + "' , " +
-                "'" +  book.getId()+"'" ;
+        return "";
     }
+
     public void create(Book book) {
         try (Connection connection = DriverManager.getConnection(URL, USER_NAME, PASSWORD)) {
             Statement statement = connection.createStatement();
