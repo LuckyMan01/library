@@ -12,14 +12,15 @@ public class StatementBook {
 
 
     private String buildStringValues(Book book) {
-        return "";
+        return "'"+book.getNameBook() + " '" + "'"+book.getYears()+"'" +  "'" + book.getAuthor() + "'";
+
     }
 
     public void create(Book book) {
         try (Connection connection = DriverManager.getConnection(URL, USER_NAME, PASSWORD)) {
             Statement statement = connection.createStatement();
             System.out.println(buildStringValues(book));
-            String sql = "INSERT INTO public.books(name, author, years, genre, id) VALUES (" + buildStringValues(book) + ");";
+            String sql = "INSERT INTO public.book(name_book,years,author) VALUES ("+"'" +book.getNameBook()+"', " + book.getYears()+",'" + book.getAuthor()+"'" +  ");";
             statement.execute(sql);
         } catch (SQLException e) {
             e.printStackTrace();
