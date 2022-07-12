@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="455697f8-10af-4e9a-95ac-d708cc1a9a99" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/configuration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configuration.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/initDataBase.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/initDataBase.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/BookDescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/BookDescription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

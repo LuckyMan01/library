@@ -19,4 +19,13 @@ public class BookDescription {
     private List<Book> numberOfCopies;
     private List<User> usersWhoRead;
 
+    public BookDescription() {
+    }
+
+    public BookDescription(long id, Genre genre, List<Book> numberOfCopies, List<User> usersWhoRead) {
+        this.id = id;
+        this.genre = genre;
+        this.numberOfCopies = numberOfCopies;
+        this.usersWhoRead = usersWhoRead;
+    }
 }
