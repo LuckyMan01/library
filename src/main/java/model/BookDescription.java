@@ -22,10 +22,7 @@ public class BookDescription {
     public BookDescription() {
     }
 
-    public BookDescription(long id, Genre genre, List<Book> numberOfCopies, List<User> usersWhoRead) {
-        this.id = id;
+    public BookDescription( Genre genre) {
         this.genre = genre;
-        this.numberOfCopies = numberOfCopies;
-        this.usersWhoRead = usersWhoRead;
     }
 }
