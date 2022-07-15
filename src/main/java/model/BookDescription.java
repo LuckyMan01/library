@@ -1,6 +1,6 @@
 package model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import util.Genre;
 
 import java.util.List;
@@ -16,16 +16,17 @@ public class BookDescription {
     @Column(name= "genre")
     private Genre genre;
 
-    private List<Book> numberOfCopies;
-    private List<User> usersWhoRead;
+    @OneToOne
+    @JoinColumn(name = "book_description_id")
+    private Book book;
+
 
     public BookDescription() {
     }
 
-    public BookDescription(long id, Genre genre, List<Book> numberOfCopies, List<User> usersWhoRead) {
+    public BookDescription(long id, Genre genre) {
         this.id = id;
         this.genre = genre;
-        this.numberOfCopies = numberOfCopies;
-        this.usersWhoRead = usersWhoRead;
+
     }
 }

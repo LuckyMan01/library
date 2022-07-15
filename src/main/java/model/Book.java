@@ -1,7 +1,6 @@
 package model;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 @Entity
 @Table(name = "book")
 public class Book {
@@ -19,7 +18,7 @@ public class Book {
     @Column(name = "author")
     private String author;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "book_id")
     private BookDescription bookDescription;
 
