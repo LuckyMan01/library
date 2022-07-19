@@ -1,6 +1,9 @@
 package model;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.UUID;
+
 @Entity
 @Table(name = "book")
 public class Book {
@@ -12,45 +15,38 @@ public class Book {
     @Column(name = "name_book")
     private String nameBook;
 
-    @Column(name = "years")
-    private int years;
+    @Column(name = "uuid")
+    private UUID uuid;
 
-    @Column(name = "author")
-    private String author;
+    @Column(name = "is_user")
+    private boolean isUser;
+
+    @Column(name="create_data")
+    private LocalDateTime createData;
+
+    @Column(name="last_update_date")
+    private LocalDateTime lastUpdateDate;
+
+    @Column(name = "expiration_id")
+    private LocalDateTime expirationId;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "book_id")
     private BookDescription bookDescription;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_description")
+    private UserDescription userDescription;
+
     public Book() {
     }
 
-    public Book(String nameBook, int years, String author) {
+    public Book(String nameBook, UUID uuid, boolean isUser, LocalDateTime createData, LocalDateTime lastUpdateDate, LocalDateTime expirationId) {
         this.nameBook = nameBook;
-        this.years = years;
-        this.author = author;
-    }
-
-    public String getNameBook() {
-        return nameBook;
-    }
-
-    public int getYears() {
-        return years;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", nameBook='" + nameBook + '\'' +
-                ", years=" + years +
-                ", author='" + author + '\'' +
-                ", bookDescription=" + bookDescription +
-                '}';
+        this.uuid = uuid;
+        this.isUser = isUser;
+        this.createData = createData;
+        this.lastUpdateDate = lastUpdateDate;
+        this.expirationId = expirationId;
     }
 }

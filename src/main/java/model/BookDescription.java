@@ -11,6 +11,12 @@ public class BookDescription {
     @Column(name= "id")
     private long id;
 
+    @Column(name = "title")
+    private String title;
+
+    @Column(name= "author")
+    private String author;
+
     @Column(name= "genre")
     private Genre genre;
 
@@ -22,8 +28,9 @@ public class BookDescription {
     public BookDescription() {
     }
 
-    public BookDescription(long id, Genre genre) {
-        this.id = id;
+    public BookDescription(String title, String author, Genre genre) {
+        this.title = title;
+        this.author = author;
         this.genre = genre;
     }
 }
