@@ -35,8 +35,8 @@ public class Book {
     private BookDescription bookDescription;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_description")
-    private UserDescription userDescription;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Book() {
     }

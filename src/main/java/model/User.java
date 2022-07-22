@@ -1,11 +1,8 @@
 package model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
 @Table(name = "user")
@@ -33,8 +30,9 @@ public class User {
     @Column(name = "phone")
     private int phone;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+
+    @OneToOne
+    @JoinColumn(name = "user_description_id")
     private UserDescription userDescription;
 
     public User() {
@@ -49,4 +47,35 @@ public class User {
         this.phone = phone;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public int getPhone() {
+        return phone;
+    }
+
+    public UserDescription getUserDescription() {
+        return userDescription;
+    }
 }
