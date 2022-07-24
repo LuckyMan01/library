@@ -1,10 +1,10 @@
-package model;
+package com.example.library.model;
 
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,9 +30,9 @@ public class User {
     private int phone;
 
 
-    @OneToOne
-    @JoinColumn(name = "user_description_id")
-    private UserDescription userDescription;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "users_id")
+    private User user;
 
     public User() {
     }
@@ -46,35 +46,4 @@ public class User {
         this.phone = phone;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public int getPhone() {
-        return phone;
-    }
-
-    public UserDescription getUserDescription() {
-        return userDescription;
-    }
 }

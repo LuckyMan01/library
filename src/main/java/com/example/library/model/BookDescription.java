@@ -1,6 +1,6 @@
-package model;
+package com.example.library.model;
 
-import util.Genre;
+import com.example.library.util.Genre;
 
 import javax.persistence.*;
 

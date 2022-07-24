@@ -1,4 +1,4 @@
-package model;
+package com.example.library.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -22,7 +22,7 @@ public class UserDescription {
 
 
     @OneToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_description_id")
     private User user;
 
     public UserDescription() {

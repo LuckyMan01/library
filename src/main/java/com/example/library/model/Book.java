@@ -1,4 +1,4 @@
-package model;
+package com.example.library.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -35,7 +35,7 @@ public class Book {
     private BookDescription bookDescription;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "users_id")
     private User user;
 
     public Book() {

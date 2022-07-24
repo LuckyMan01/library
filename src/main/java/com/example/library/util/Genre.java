@@ -1,4 +1,4 @@
-package util;
+package com.example.library.util;
 
 public enum Genre {
     COMEDY("Comedy"),
