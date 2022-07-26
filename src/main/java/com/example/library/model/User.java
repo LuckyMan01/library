@@ -1,31 +1,44 @@
 package com.example.library.model;
 
 
+import lombok.*;
+
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
+@Data
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
 
+    @NonNull
     @Column(name = "first_name")
     private String firstName;
 
+    @NonNull
     @Column(name = "last_name")
     private String lastName;
 
+    @NonNull
     @Column(name = "email")
     private String email;
 
+    @NonNull
     @Column(name = "gender")
     private String gender;
 
+    @NonNull
     @Column(name = "address")
     private String address;
 
+    @NonNull
     @Column(name = "phone")
     private int phone;
 
@@ -33,17 +46,5 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "users_id")
     private User user;
-
-    public User() {
-    }
-
-    public User(String firstName, String lastName, String email, String gender, String address, int phone) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.gender = gender;
-        this.address = address;
-        this.phone = phone;
-    }
 
 }
