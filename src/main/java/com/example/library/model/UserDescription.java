@@ -1,16 +1,11 @@
 package com.example.library.model;
 
-import com.example.library.repository.UserDescriptionRepository;
-import com.example.library.repository.UserRepository;
-import com.example.library.service.UserDescriptionService;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 
 @Entity
@@ -18,7 +13,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class UserDescription implements UserDescriptionService {
+public class UserDescription {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -37,38 +32,8 @@ public class UserDescription implements UserDescriptionService {
     private LocalDateTime lastUpdatedDate;
 
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_description_id")
     private User user;
 
-
-    @Autowired
-    UserDescriptionRepository repository;
-
-    @Override
-    @Transactional
-    public UserDescription create(UserDescription description) {
-        return repository.save(description);
-    }
-
-    @Override
-    @Transactional
-    public boolean delete(Long id) {
-        UserDescription deleted = repository.getReferenceById(id);
-        repository.delete(deleted);
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public UserDescription update(UserDescription description) {
-        UserDescription updated = repository.getReferenceById(description.getId());
-        repository.saveAndFlush(description);
-        return updated;
-    }
-
-    @Override
-    public UserDescription findById(Long id) {
-        return repository.getReferenceById(id);
-    }
 }

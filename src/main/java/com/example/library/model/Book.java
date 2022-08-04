@@ -1,15 +1,11 @@
 package com.example.library.model;
 
-import com.example.library.repository.BookRepository;
-import com.example.library.service.BookService;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -18,7 +14,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Table(name = "book")
-public class Book implements BookService {
+public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -55,35 +51,5 @@ public class Book implements BookService {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "users_id")
     private User user;
-
-    @Autowired
-    private BookRepository repository;
-
-    @Override
-    @Transactional
-    public Book create(Book entity) {
-        return repository.save(entity);
-    }
-
-    @Override
-    @Transactional
-    public boolean delete(Long id) {
-        Book deleted = repository.getReferenceById(id);
-        repository.delete(deleted);
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public Book update(Book entity) {
-        Book updated = repository.getReferenceById(entity.getId());
-        repository.saveAndFlush(entity);
-        return updated;
-    }
-
-    @Override
-    public Book findById(Long id) {
-        return repository.getReferenceById(id);
-    }
 
 }

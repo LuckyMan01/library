@@ -7,4 +7,5 @@ public interface UserService {
     boolean delete(Long id);
     User update(User user);
     User findById(Long id);
+
 }
