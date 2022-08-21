@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "application_users")
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
@@ -38,7 +38,7 @@ public class User  {
     private int phone;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "users_id")
-    private User user;
+    @JoinColumn(name = "user_description_id")
+    private UserDescription userDescription;
 
 }

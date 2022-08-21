@@ -14,13 +14,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-//    @RequestMapping(value = "/example", method = RequestMethod.GET)
-//    public User fetchUserExample() {
-//        return userService.exampleUser();
-//    }
-//
-//    @RequestMapping(value = "/name", method = RequestMethod.GET)
-//    public User fetchUserByFirstName(@RequestParam(value = "firstName") String firstName) {
-//        return userService.fetchUserByFirstName(firstName);
-//    }
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String testReturnString() {
+        return "Hello world";
+    }
+
 }

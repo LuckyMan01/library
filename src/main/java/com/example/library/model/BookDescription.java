@@ -7,6 +7,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "book_description")
@@ -31,8 +32,7 @@ public class BookDescription{
     @Column(name = "genre")
     private Genre genre;
 
-    @OneToOne
-    @JoinColumn(name = "book_description_id")
-    private Book book;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "description")
+    private List<Book> books;
 
 }

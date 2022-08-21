@@ -25,7 +25,7 @@ public class Book {
     private String nameBook;
 
     @NonNull
-    @Column(name = "uuid")
+    @Column(name = "number_uuid")
     private UUID uuid;
 
     @NonNull
@@ -44,12 +44,12 @@ public class Book {
     @Column(name = "expiration_id")
     private LocalDateTime expirationId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "book_id")
-    private BookDescription bookDescription;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "book_description_id")
+    private BookDescription description;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "users_id")
+    @JoinColumn(name = "application_users_id")
     private User user;
 
 }

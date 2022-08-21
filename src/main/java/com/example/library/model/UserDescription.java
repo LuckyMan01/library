@@ -31,9 +31,4 @@ public class UserDescription {
     @Column(name="last_updated_date")
     private LocalDateTime lastUpdatedDate;
 
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_description_id")
-    private User user;
-
 }
