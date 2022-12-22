@@ -21,27 +21,23 @@ public class Book {
     private long id;
 
     @NonNull
-    @Column(name = "name_book")
-    private String nameBook;
+    @Column(name = "instance_id")
+    private String uuid;
 
     @NonNull
-    @Column(name = "number_uuid")
-    private UUID uuid;
-
-    @NonNull
-    @Column(name = "is_user")
+    @Column(name = "is_used")
     private boolean isUser;
 
     @NonNull
-    @Column(name = "create_data")
+    @Column(name = "created_data")
     private LocalDateTime createData;
 
     @NonNull
-    @Column(name = "last_update_date")
+    @Column(name = "last_updated_data")
     private LocalDateTime lastUpdateDate;
 
     @NonNull
-    @Column(name = "expiration_id")
+    @Column(name = "expiration_data")
     private LocalDateTime expirationId;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -49,7 +45,7 @@ public class Book {
     private BookDescription description;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "application_users_id")
-    private User user;
+    @JoinColumn(name = "users_cart_id")
+    private Client client;
 
 }

@@ -1,11 +1,11 @@
 package com.example.library.service;
 
-import com.example.library.model.User;
+import com.example.library.model.Client;
 
 public interface UserService {
-    User create(User user);
+    Client create(Client client);
     boolean delete(Long id);
-    User update(User user);
-    User findById(Long id);
+    Client update(Client client);
+    Client findById(Long id);
 
 }

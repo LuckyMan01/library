@@ -1,6 +1,6 @@
 package com.example.library.service.impl;
 
-import com.example.library.model.User;
+import com.example.library.model.Client;
 import com.example.library.repository.UserRepository;
 import com.example.library.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,28 +14,28 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public User create(User user) {
-        return repository.save(user);
+    public Client create(Client client) {
+        return repository.save(client);
     }
 
     @Override
     @Transactional
     public boolean delete(Long id) {
-        User deleted = repository.getReferenceById(id);
+        Client deleted = repository.getReferenceById(id);
         repository.delete(deleted);
         return true;
     }
 
     @Override
     @Transactional
-    public User update(User user) {
-        User updated = repository.getReferenceById(user.getId());
-        repository.saveAndFlush(user);
+    public Client update(Client client) {
+        Client updated = repository.getReferenceById(client.getId());
+        repository.saveAndFlush(client);
         return updated;
     }
 
     @Override
-    public User findById(Long id) {
+    public Client findById(Long id) {
         return repository.getReferenceById(id);
     }
 }

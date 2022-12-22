@@ -13,14 +13,14 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class UserDescription {
+public class UserCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
 
     @NonNull
-    @Column(name="create_data")
+    @Column(name="created_data")
     private LocalDateTime createData;
 
     @NonNull
@@ -28,7 +28,7 @@ public class UserDescription {
     private boolean activeStatus;
 
     @NonNull
-    @Column(name="last_updated_date")
+    @Column(name="last_updated_data")
     private LocalDateTime lastUpdatedDate;
 
 }

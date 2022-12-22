@@ -1,6 +1,6 @@
 package com.example.library.service.impl;
 
-import com.example.library.model.UserDescription;
+import com.example.library.model.UserCard;
 import com.example.library.repository.UserDescriptionRepository;
 import com.example.library.service.UserDescriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,28 +14,28 @@ public class UserDescriptionServiceImpl implements UserDescriptionService {
 
     @Override
     @Transactional
-    public UserDescription create(UserDescription description) {
+    public UserCard create(UserCard description) {
         return repository.save(description);
     }
 
     @Override
     @Transactional
     public boolean delete(Long id) {
-        UserDescription deleted = repository.getReferenceById(id);
+        UserCard deleted = repository.getReferenceById(id);
         repository.delete(deleted);
         return true;
     }
 
     @Override
     @Transactional
-    public UserDescription update(UserDescription description) {
-        UserDescription updated = repository.getReferenceById(description.getId());
+    public UserCard update(UserCard description) {
+        UserCard updated = repository.getReferenceById(description.getId());
         repository.saveAndFlush(description);
         return updated;
     }
 
     @Override
-    public UserDescription findById(Long id) {
+    public UserCard findById(Long id) {
         return repository.getReferenceById(id);
     }
 }

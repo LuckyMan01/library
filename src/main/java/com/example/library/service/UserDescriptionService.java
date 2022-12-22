@@ -1,13 +1,13 @@
 package com.example.library.service;
 
-import com.example.library.model.UserDescription;
+import com.example.library.model.UserCard;
 
 public interface UserDescriptionService {
-    UserDescription create(UserDescription description);
+    UserCard create(UserCard description);
 
     boolean delete(Long id);
 
-    UserDescription update(UserDescription description);
+    UserCard update(UserCard description);
 
-    UserDescription findById(Long id);
+    UserCard findById(Long id);
 }
