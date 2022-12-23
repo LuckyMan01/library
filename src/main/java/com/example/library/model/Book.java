@@ -22,23 +22,23 @@ public class Book {
 
     @NonNull
     @Column(name = "instance_id")
-    private String uuid;
+    private String instanceId;
 
     @NonNull
     @Column(name = "is_used")
-    private boolean isUser;
+    private boolean isUsed;
 
     @NonNull
-    @Column(name = "created_data")
-    private LocalDateTime createData;
+    @Column(name = "created_date")
+    private LocalDateTime createDate;
 
     @NonNull
     @Column(name = "last_updated_data")
     private LocalDateTime lastUpdateDate;
 
     @NonNull
-    @Column(name = "expiration_data")
-    private LocalDateTime expirationId;
+    @Column(name = "expiration_date")
+    private LocalDateTime expirationDate;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "book_description_id")

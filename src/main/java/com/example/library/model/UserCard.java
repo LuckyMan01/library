@@ -20,7 +20,7 @@ public class UserCard {
     private long id;
 
     @NonNull
-    @Column(name="created_data")
+    @Column(name="created_date")
     private LocalDateTime createData;
 
     @NonNull
