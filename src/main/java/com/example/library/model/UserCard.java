@@ -21,7 +21,7 @@ public class UserCard {
 
     @NonNull
     @Column(name="created_date")
-    private LocalDateTime createData;
+    private LocalDateTime createdDate;
 
     @NonNull
     @Column(name="active_status")

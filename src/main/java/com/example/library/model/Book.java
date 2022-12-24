@@ -30,11 +30,11 @@ public class Book {
 
     @NonNull
     @Column(name = "created_date")
-    private LocalDateTime createDate;
+    private LocalDateTime createdDate;
 
     @NonNull
     @Column(name = "last_updated_data")
-    private LocalDateTime lastUpdateDate;
+    private LocalDateTime lastUpdatedDate;
 
     @NonNull
     @Column(name = "expiration_date")
